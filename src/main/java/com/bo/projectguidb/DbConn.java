@@ -13,9 +13,8 @@ public class DbConn {
     public static Connection connectDb(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + db;
+            String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + db+"?useSSL=false&serverTimezone=UTC";
             Connection conn = DriverManager.getConnection(jdbcUrl, user, pass);
-            System.out.println("Connected to database");
             return conn;
         }catch(Exception e){
             throw new RuntimeException(e);

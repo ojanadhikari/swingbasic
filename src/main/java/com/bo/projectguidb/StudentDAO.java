@@ -19,7 +19,7 @@ public class StudentDAO {
             ps.setString(4,student.getAddress());
 
             ps.executeUpdate();
-
+            System.out.println("Insertion Successful");
             conn.close();
 
         }catch (Exception e){
@@ -41,6 +41,7 @@ public class StudentDAO {
                         rs.getString("address"))
                 );
             }
+            System.out.println("Retrieval Successful");
             conn.close();
 
         }catch (Exception e){
@@ -55,6 +56,7 @@ public class StudentDAO {
             PreparedStatement ps = conn.prepareStatement("delete from student where id=?");
             ps.setInt(1, id);
             ps.executeUpdate();
+            System.out.println("Deletion Successful");
             conn.close();
 
         }catch (Exception e){
@@ -73,6 +75,7 @@ public class StudentDAO {
             ps.setInt(4, student.getId());
 
             ps.executeUpdate();
+            System.out.println("Update Successful");
             conn.close();
 
         }catch (Exception e){
