@@ -1,4 +1,4 @@
-package com.bo.event;
+package com.bo.swing.event;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

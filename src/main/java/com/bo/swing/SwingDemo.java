@@ -1,4 +1,4 @@
-package com.bo;
+package com.bo.swing;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
