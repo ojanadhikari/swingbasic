@@ -21,29 +21,26 @@ public class Server {
 
             String clientMessage, serverMessage;
 
-            while(true) {
+            while (true) {
 
-                //read from client
                 clientMessage = in.readLine();
 
-                if(clientMessage == null || exitMessage.equals(clientMessage)) {
+                if (clientMessage == null || clientMessage.equalsIgnoreCase("exit")) {
                     System.out.println("Client disconnected");
                     break;
                 }
 
                 System.out.println("Client: " + clientMessage);
 
-                //send reply
                 System.out.print("Server: ");
                 serverMessage = consoleInput.readLine();
+
                 out.println(serverMessage);
 
-                if(serverMessage.equals(exitMessage)) {
+                if (serverMessage.equalsIgnoreCase("exit")) {
                     System.out.println("Server exited");
                     break;
                 }
-
-                s.close();
             }
 
         }catch(Exception e) {

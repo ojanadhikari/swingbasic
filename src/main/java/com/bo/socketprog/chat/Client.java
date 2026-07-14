@@ -19,30 +19,26 @@ public class Client {
 
             String serverMessage , clientMessage;;
 
-            while(true) {
-                //send to server
+            while (true) {
 
-                System.out.println("Client: ");
+                System.out.print("Client: ");
                 clientMessage = consoleInput.readLine();
-                if(clientMessage.equals("exit")) {
+
+                out.println(clientMessage);
+
+                if (clientMessage.equalsIgnoreCase("exit")) {
                     System.out.println("Client disconnected.");
                     break;
                 }
 
-                //receive from server
-
-
-                serverMessage = consoleInput.readLine();
+                serverMessage = in.readLine();
 
                 if (serverMessage == null || serverMessage.equalsIgnoreCase("exit")) {
                     System.out.println("Server disconnected.");
                     break;
                 }
 
-                System.out.println("Server: "+serverMessage);
-
-
-
+                System.out.println("Server: " + serverMessage);
             }
 
         }catch(Exception e) {
